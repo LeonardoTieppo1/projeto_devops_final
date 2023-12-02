@@ -4,7 +4,7 @@ services:
     image: python:3.11
     volumes:
       - .C:\Users\tiepp\Documentos\ESPM\DevOps\projeto\projectF:/app
-    working_dir: /main
+    working_dir: /app
     command: bash -c "pip install -r requirements.txt && python main.py"
     ports:
       - "5000:5000"
