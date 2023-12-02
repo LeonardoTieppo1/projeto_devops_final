@@ -1,0 +1,22 @@
+swagger: "2.0"
+info:
+  title: Exemplo de API Hello World
+  description: API simples para saudar o mundo
+  version: "1.0"
+host: localhost:5000
+basePath: /
+schemes:
+  - http
+paths:
+  /:
+    get:
+      summary: Retorna a saudação 'Hello, World!'
+      responses:
+        "200":
+          description: Mensagem de saudação
+definitions:
+  Message:
+    type: object
+    properties:
+      message:
+        type: string
