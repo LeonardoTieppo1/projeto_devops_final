@@ -1,21 +1,16 @@
-# Use an official Python runtime as a parent image
+#Base image
 FROM python:3.11
 
-# Set the working directory to /app
-WORKDIR /main
+#Diretorio em que vamos trabalhar
+WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /main/
+#Variaveis de ambiente
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONBUFFERED 1
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+#Instalando as dependencias
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
-# Make port 5000 available to the world outside this container
-EXPOSE 5000
-
-# Define environment variable
-ENV FLASK_APP main.py
-ENV FLASK_ENV development
-
-# Run app.py when the container launches
-CMD ["flask", "run", "--host=0.0.0.0"]
+#Copiar o código para o container
+COPY . /app/
