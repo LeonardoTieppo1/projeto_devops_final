@@ -14,4 +14,5 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 #Copiar o código para o container
 COPY . .
+EXPOSE 5000
 #CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app"]
