@@ -5,7 +5,8 @@ FROM python:3.11
 WORKDIR /app
 
 #Variaveis de ambiente
-ENV NAME world
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
 #Instalando as dependencias
 COPY requirements.txt /app/
