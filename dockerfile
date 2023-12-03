@@ -14,5 +14,5 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 #Copiar o código para o container
 COPY . .
-EXPOSE 5000
-CMD ["python", "app.py"]
+# EXPOSE 5000
+# CMD ["python", "app.py"]
