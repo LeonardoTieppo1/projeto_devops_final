@@ -9,9 +9,9 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 #Instalando as dependencias
-COPY requirements.txt /app/
+COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 #Copiar o código para o container
-COPY . /app/
+COPY . .
 #CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app"]
