@@ -3,7 +3,7 @@ version: '3'
 services:
   web:
     image: python:3.11
-    command: bash -c "pip install -r requirements.txt && python app.py"
+    command: sh -c "pip install -r requirements.txt && python app.py"
     volumes:
       - ./app:/app
     ports:
